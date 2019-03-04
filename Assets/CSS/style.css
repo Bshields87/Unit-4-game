@@ -1,7 +1,10 @@
 .container{
     box-sizing: content-box;
+    margin: auto;
     height: 640px;
     width: 820px;
+    font-family: 'Trade Winds', cursive;
+    border: black 5px solid;
     
 }
 
@@ -16,9 +19,12 @@ body {
     position: relative;
     text-align: center;
     color: rgb(89, 48, 201);
+    font-size: 30px;
 }
-
-#randomNumber{
+#rules{
+    font-size: 25px;
+}
+#compNumber{
     box-sizing: content-box;
     background-color: rgb(79, 152, 201);
     height: 150px;
@@ -27,6 +33,7 @@ body {
     bottom: 0;
     left:0;
     text-align: center;
+    font-size: 30px;
 }
 #winCounter{
     box-sizing: content-box;
@@ -37,6 +44,7 @@ body {
     bottom: 0;
     right: 35%;
     text-align: center;
+    font-size: 30px;
 }
 #totalScore{
     box-sizing: content-box;
@@ -47,4 +55,5 @@ body {
     bottom: 0;
     right: 0;
     text-align: center;
+    font-size: 30px;
 }

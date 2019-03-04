@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     // computer variable
     var computerGenerator = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    $("#randomNumber").html('Computer Number: ' + computerGenerator);
+    $("#randomNumber").html(computerGenerator);
     console.log(computerGenerator);
 
     //on click events
