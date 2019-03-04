@@ -1,47 +1,117 @@
-// variables
+$(document).ready(function () {
+    console.log("ready!");
 
-var wins= 0;
-var losses= 0;
-var currentScore= 0;
-var gemSums= [];
-// for gem values
-var crystalValue= [1,2,3,4,5,6,7,8,9,10,11,12];
-
-function resetGame(){
-    computerGenerator=Math.floor(Math.random() * (120 - 19 + 1) ) + 19;
-    gemValues= 1 + Math.floor(Math.random() * ((12 - 1) + 1))
-   
-};
-var gemValues= function(){
-    return  1 + Math.floor(Math.random() * ((12 - 1) + 1));
-};
-console.log(gemValues());
+    //reset game
+    function resetGame() {
+        computerGenerator = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        $("#randomNumber").html('Computer Number: ' + computerGenerator);
+        quartzValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+        purpleValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+        opalValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+        azuriteValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+        currentScore = 0;
+        $("#currentSum").html(currentScore);
+        console.log(computerGenerator);
+    };
 
 
-//for random number
-var computerGenerator= function(min, max){
-  return  Math.floor(Math.random() * (120 - 19 + 1) ) + 19;
-   
-};
+    //score counter
+    var wins = 0;
+    var losses = 0;
+    var currentScore = 0;
+    var gemSums = 0;
 
-console.log(computerGenerator());
+    // computer variable
+    var computerGenerator = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    $("#randomNumber").html('Computer Number: ' + computerGenerator);
+    console.log(computerGenerator);
 
-if (gemSums===computerGenerator){
-    wins++;
-    resetGame();
-}
-//on click event for gems
-// reset function--- changes current score back to 0 changes random # changes gemstone values
-//to assign random #to each gem 
-//need a function to add them together= to a variable
-//need to compare in if else statement for the gem stone sum value and the randomly generted comp number
-// wins loss counter changes
-//wins loss text push
+    //on click events
 
 
+    var azuriteValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+    $("#azurite").on("click", function () {
+        currentScore += azuriteValue;
+        $("#currentSum").html(currentScore);
+        console.log(azuriteValue);
+        console.log(currentScore);
+        if (currentScore === computerGenerator) {
+            alert('You win');
+            wins++;
+            $("#wins").html(' Wins: ' + wins);
+            resetGame();
+        }
+        else if (currentScore > computerGenerator) {
+            alert('You Lost');
+            losses++;
+            $("#losses").html('Losses: ' + losses);
+            resetGame();
+        }
+
+    });
 
 
-//to ake images a button
-//document.getElementById("quartz").addEventListener("click", );
+    var opalValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+    $("#opal").on("click", function () {
+        currentScore += opalValue;
+        $("#currentSum").html(currentScore);
+        console.log(opalValue);
+        console.log(currentScore);
+        if (currentScore === computerGenerator) {
+            alert('You win');
+            wins++;
+            $("#wins").html(' Wins: ' + wins);
+            resetGame();
+        }
+        else if (currentScore > computerGenerator) {
+            alert('You Lost');
+            losses++;
+            $("#losses").html('Losses: ' + losses);
+            resetGame();
+        }
+    });
 
 
+    var purpleValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+    $("#purple").on("click", function () {
+        currentScore += purpleValue;
+        $("#currentSum").html(currentScore);
+        console.log(purpleValue);
+        console.log(currentScore);
+        if (currentScore === computerGenerator) {
+            alert('You win');
+            wins++;
+            $("#wins").html(' Wins: ' + wins);
+            resetGame();
+        }
+        else if (currentScore > computerGenerator) {
+            alert('You Lost');
+            losses++;
+            $("#losses").html('Losses: ' + losses);
+            resetGame();
+        }
+    });
+
+
+    var quartzValue = 1 + Math.floor(Math.random() * ((12 - 1) + 1));
+    $("#quartz").on("click", function () {
+        currentScore += quartzValue;
+        $("#currentSum").html(currentScore);
+        console.log(quartzValue);
+        console.log(currentScore);
+        if (currentScore === computerGenerator) {
+            alert('You win');
+            wins++;
+            $("#wins").html(' Wins: ' + wins);
+            resetGame();
+        }
+        else if (currentScore > computerGenerator) {
+            alert('You Lost');
+            losses++;
+            $("#losses").html('Losses: ' + losses);
+            resetGame();
+        }
+    });
+
+
+});
